@@ -24,7 +24,7 @@ const lazyBar = foo();
 // The factory is invoked.
 const val = lazyBar.value;
 
-// the 'factory' and 'bar' constants can be cleaned-up by the GC.
+// The 'factory' and 'bar' constants can be cleaned-up by the GC.
 
 // The factory is not invoked again.
 const val2 = lazyBar.value;
