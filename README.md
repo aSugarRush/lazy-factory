@@ -10,7 +10,7 @@ Example:
 
 function foo(){
 
-// A havy memory-usage object we don't want to keep in memory;
+// A heavy object we don't want to keep in memory;
 const bar = Array.from({ length: 10**10 }, () => Math.floor(Math.random() * 40))
 
 // A time-wasting operation we want to run only when needed that has a closure over the object.
