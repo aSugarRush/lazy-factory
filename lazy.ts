@@ -7,7 +7,7 @@ export type Lazy<T> = { value: T };
  */
  export function lazy<T>(valueFactory: () => T): Lazy<T> {
     return {
-      // Using a lazy self-overwriting getter, this way it is ensured that the factory delegate is invoked once without further inner state and no closure is kept in memory (garbage colelctor can clean up any heavy obejct enclosed in the factory).
+      // Using a lazy self-overwriting getter, this way it is ensured that the factory delegate is invoked once without further inner state and no closure is kept in memory (GC can clean up any heavy object enclosed by the factory).
       get value() {
         // @ts-ignore
         delete this.value;
