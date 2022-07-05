@@ -1,8 +1,7 @@
 # lazy-factory
-Simply utility function to provide lazy evaluation of a value thought a factory function.
+Simple utility function to provide late evaluation of a value via a factory function.
 
-It uses an [self-overwriting getter](https://www.merrickchristensen.com/articles/lazy-evaluation-in-javascript/) that ensures that the factory function provided is not kept in memory
-(it is picked up by the garbage collector if it is no longer referenced), thus cleaning up any variables enclosed by it.
+It uses a [self-overwriting getter](https://www.merrickchristensen.com/articles/lazy-evaluation-in-javascript/) to ensure the provided factory function is not kept in memory (it can be picked up by the garbage collector if it is no longer referenced), thus cleaning up any variables enclosed by it.
 
 Example:
 
@@ -10,7 +9,7 @@ Example:
 
 function foo(){
 
-// A heavy object we don't want to keep in memory;
+// A heavy object we don't want to keep in memory.
 const bar = Array.from({ length: 10**10 }, () => Math.floor(Math.random() * 40))
 
 // A time-wasting operation we want to run only when needed that has a closure over the object.
